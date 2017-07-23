@@ -15,6 +15,6 @@ services:
     ports:
       - "27017:27017"
     volumes:
-      - engine-mongo-data:/data/db:rw
+      - engine-mongo-data-test:/data/db:rw
 volumes:
-  engine-mongo-data:
+  engine-mongo-data-test:
