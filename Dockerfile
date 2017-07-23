@@ -8,6 +8,7 @@ WORKDIR /usr/src/app
 COPY package.json /usr/src/app/
 RUN npm install -g bower 
 RUN npm install -g gulp
+RUN npm install -g mocha
 RUN npm install
 
 # Bundle app source
