@@ -4,8 +4,7 @@ services:
     container_name: app
     build: .
     ports:
-      - "3000:3000"
-    entrypoint: "mocha ./tests --recursive --reporter spec"
+      - "8080:8080"
     volumes:
       - .:/src
     links:

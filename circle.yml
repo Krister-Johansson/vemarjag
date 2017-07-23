@@ -1,0 +1,20 @@
+machine:
+  services:
+    - docker
+  node:
+    version: 0.10.22
+dependencies:
+  cache_directories:
+    - node_modules
+  override:
+    - sudo pip install -U docker-compose==1.3.3
+test:
+  override:
+    - docker-compose -f . build && docker-compose -f . up
+    - sh ./scripts/ci-test
+deployment:
+  hub:
+    branch: master
+    commands:
+      - docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASS
+      - docker push swelogan/vemarjag
