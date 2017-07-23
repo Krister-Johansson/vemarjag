@@ -1,0 +1,13 @@
+node_modules
+bower_components
+mongo
+docker-compose.yml
+LICENSE
+
+npm-debug.log
+.git
+Dockerfile
+.DS_Store
+.gitignore
+README.md
+.env

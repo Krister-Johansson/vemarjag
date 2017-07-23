@@ -6,11 +6,13 @@ WORKDIR /usr/src/app
 
 # Install app dependencies
 COPY package.json /usr/src/app/
+RUN npm install -g bower 
+RUN npm install -g gulp
 RUN npm install
 
 # Bundle app source
-COPY src /usr/src/app/src
-
-EXPOSE 3000
-
+COPY . /usr/src/app
+RUN bower install
+RUN gulp
+EXPOSE 8080
 CMD [ "npm", "start" ]
