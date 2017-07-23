@@ -1,0 +1,18 @@
+version: '2'
+services:
+  web:
+    container_name: app
+    build: .
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/src
+    links:
+        - db
+  db:
+    container_name: database
+    image: mongo
+    ports:
+      - "27017:27017"
+    volumes:
+      - ./mongo:/data/db:rw

@@ -1,0 +1,22 @@
+{
+  "name": "vemarjag",
+  "description": "",
+  "main": "a",
+  "authors": [
+    "Krister Johansson <krister.johansson86@outlook.com>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/Krister-Johansson/vemarjag",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap-sass": "^3.3.7",
+    "font-awesome": "^4.7.0"
+  }
+}
