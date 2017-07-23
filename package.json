@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "test": "./node_modules/.bin/mocha --reporter spec",
+    "test": "mocha ./tests --recursive --reporter spec",
     "start": "node ./src/bin/www"
   },
   "dependencies": {

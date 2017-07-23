@@ -1,4 +1,6 @@
 machine:
+  environment:
+    MONGODB : $MONGODB
   services:
     - docker
   node:

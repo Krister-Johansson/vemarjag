@@ -15,9 +15,10 @@ var home = require('./routes/home.route');
 
 var app = express();
 
-// mongoose.Promise = global.Promise;
-// mongoose.connect('mongodb://mongo');
-
+mongoose.Promise = global.Promise;
+var promise = mongoose.connect(process.env.MONGODB, {
+  useMongoClient: true,
+});
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');

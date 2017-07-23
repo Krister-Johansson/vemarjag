@@ -7,14 +7,3 @@ services:
       - "8080:8080"
     volumes:
       - .:/src
-    links:
-        - db
-  db:
-    container_name: database
-    image: mongo
-    ports:
-      - "27017:27017"
-    volumes:
-      - engine-mongo-data:/data/db:rw
-volumes:
-  engine-mongo-data:
