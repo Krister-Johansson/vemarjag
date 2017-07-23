@@ -3,7 +3,7 @@ bower_components
 mongo
 docker-compose.yml
 LICENSE
-
+.circleci
 npm-debug.log
 .git
 Dockerfile
