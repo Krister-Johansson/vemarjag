@@ -4,7 +4,6 @@ var homeCtrl = require('../controllers/home.controller');
 router.route('/')
   .get(homeCtrl.home);
 
-router.route('/add')
-  .get(homeCtrl.add);
-
+router.route('/:group')
+  .get(homeCtrl.getRandomImage);
 module.exports = router;

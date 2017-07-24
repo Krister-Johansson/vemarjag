@@ -8,8 +8,11 @@ html(lang='en')
     meta(name='description', content='')
     meta(name='author', content='')
     link(rel='icon', href='../../favicon.ico')
-    title Starter Template for Bootstrap
+    block head
+      title My Website
     link(href='stylesheets/app.css', rel='stylesheet')
+    block meta
+    
     // HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries
     //if lt IE 9
       script(src='https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js')

@@ -1,14 +1,36 @@
 'use strict';
 
 var mongoose = require('mongoose');
-mongoose.Promise = global.Promise;
+
+mongoose.Promise = require('bluebird');
+var connection = mongoose.createConnection(process.env.MONGODB);
 var Schema = mongoose.Schema;
 
-var FacebookSchema = new Schema({
-    group: { type: String, required: true },
+var FacebookSchema = Schema({
+    group: {
+        type: String,
+        required: true,
+        trim: true,
+    },
+    slug: {
+        type: String,
+        required: true,
+        trim: true,
+        lowercase: true,
+        index: {
+            unique: true
+        }
+    },
     content: [{
-        name: { type: String, required: true },
-        image: { type: String, required: true }
+        name: {
+            type: String,
+            required: true
+        },
+        image: {
+            type: String,
+            required: true
+        }
     }]
 });
-module.exports = mongoose.model('Facebook', FacebookSchema);
+
+module.exports = connection.model('Facebook', FacebookSchema);

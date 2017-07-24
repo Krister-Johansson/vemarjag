@@ -11,25 +11,35 @@ var dotenv = require('dotenv').config();
 var mongoose = require('mongoose');
 
 var home = require('./routes/home.route');
+var api = require('./routes/api.route');
 
 var app = express();
 
-mongoose.Promise = global.Promise;
-mongoose.connect(process.env.MONGODB);
-
+// var mongoDB = mongoose.connect(process.env.MONGODB, {
+//     useMongoClient: true,
+//     promiseLibrary: global.Promise
+// });
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
+app.use(require('connect-flash')());
+app.use(function (req, res, next) {
+  res.locals.messages = require('express-messages')(req, res);
+  next();
+});
 app.use(logger('dev'));
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.urlencoded({
+  extended: false
+}));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', home);
+app.use('/api', api);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
