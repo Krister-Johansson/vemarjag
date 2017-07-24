@@ -3,11 +3,12 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "test": "./node_modules/.bin/mocha ./tests --recursive --reporter spec",
+    "test": "./node_modules/.bin/mocha ./tests --recursive --reporter spec --ui bdd",
     "start": "node ./src/bin/www"
   },
   "dependencies": {
     "assert": "^1.4.1",
+    "bluebird": "^3.5.0",
     "body-parser": "~1.17.1",
     "chai": "^4.1.0",
     "cookie-parser": "~1.4.3",
@@ -15,7 +16,7 @@
     "dotenv": "^4.0.0",
     "express": "~4.15.2",
     "mocha": "^3.4.2",
-    "mongoose": "^4.11.3",
+    "mongoose": "^4.10.8",
     "morgan": "~1.8.1",
     "pug": "~2.0.0-beta11",
     "serve-favicon": "~2.4.2"

@@ -1,7 +1,7 @@
 'use strict';
 
 var mongoose = require('mongoose');
-
+mongoose.Promise = global.Promise;
 var Schema = mongoose.Schema;
 
 var FacebookSchema = new Schema({
@@ -10,7 +10,5 @@ var FacebookSchema = new Schema({
         name: { type: String, required: true },
         image: { type: String, required: true }
     }]
-
 });
-
-mongoose.model('Facebook', FacebookSchema);
+module.exports = mongoose.model('Facebook', FacebookSchema);

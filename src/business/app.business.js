@@ -1,16 +1,39 @@
 'use strict';
+var Facebook = require('../models/facebook.model');
 
 module.exports = {
-    addGroup: function(){
+    addGroup: function (obj, cb) {
+        var fb = new Facebook();
+
+        fb.group = obj.group;
+        var promise = fb.save();
+
+        promise.then(function (doc) {
+            console.log(doc);
+            cb(doc);
+        });
     },
-    addImage: function(){
+
+    getGroup: function (obj, cb) {
+        cb(obj);
     },
-    removeGroup: function(){
+
+    removeGroup: function (obj, cb) {
+        cb(true);
     },
-    removeImage: function(){
+
+    addImage: function (obj, cb) {
+        cb(obj);
     },
-    getImage: function(){
+
+    getImage: function (obj, cb) {
+        cb(obj);
     },
-    randomImage: function(){
+
+    removeImage: function (obj, cb) {
+        cb(true);
+    },
+
+    randomImage: function () {
     }
 }
