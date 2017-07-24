@@ -51,3 +51,4 @@ gulp.task('watch', function () {
 });
 
 gulp.task('default', ['bower', 'fonts', 'css', 'js']);
+gulp.task('build', ['bower', 'fonts', 'css', 'js']);
