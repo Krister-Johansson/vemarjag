@@ -5,8 +5,8 @@
     "logo": "https://cdn2.iconfinder.com/data/icons/nodejs-1/512/nodejs-512.png",
     "keywords": ["node", "express", "static"],
     "addons": [{
-        "plan": "mongolab:shared-single-small",
-        "as": "MONGO"
+        "plan": "mongolab:sandbox",
+        "as": "MONGODB_URI"
     }],
     "buildpacks": [{
         "url": "https://github.com/robgraeber/heroku-buildpack-nodejs-bower-gulp"
