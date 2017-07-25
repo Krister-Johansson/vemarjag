@@ -2,22 +2,14 @@
     "name": "Vem är jag",
     "description": "A test for deploy vemarjag",
     "repository": "https://github.com/Krister-Johansson/vemarjag",
-    "logo": "https://node-js-sample.herokuapp.com/node.png",
+    "logo": "https://cdn2.iconfinder.com/data/icons/nodejs-1/512/nodejs-512.png",
     "keywords": ["node", "express", "static"],
-
-    "addons": [
-        {
-            "plan": "mongolab:shared-single-small",
-            "as": "MONGO"
-        }
-    ],
-
+    "addons": [{
+        "plan": "mongolab:shared-single-small",
+        "as": "MONGO"
+    }],
     "buildpacks": [{
-            "url": "https://github.com/robgraeber/heroku-buildpack-nodejs-bower-gulp"
-        },
-        {
-            "url": "robgraeber/heroku-buildpack-nodejs-bower-gulp"
-        }
-    ]
+        "url": "https://github.com/robgraeber/heroku-buildpack-nodejs-bower-gulp"
+    }]
 
 }
