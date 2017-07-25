@@ -5,34 +5,5 @@
   "scripts": {
     "test": "./node_modules/.bin/mocha ./tests --recursive --reporter spec --ui bdd",
     "start": "node ./src/bin/www"
-  },
-  "dependencies": {
-    "assert": "^1.4.1",
-    "bluebird": "^3.5.0",
-    "body-parser": "~1.17.1",
-    "chai": "^4.1.0",
-    "connect-flash": "^0.1.1",
-    "cookie-parser": "~1.4.3",
-    "debug": "~2.6.3",
-    "dotenv": "^4.0.0",
-    "express": "~4.15.2",
-    "express-messages": "^1.0.1",
-    "mocha": "^3.4.2",
-    "mongoose": "^4.11.4",
-    "morgan": "~1.8.1",
-    "pug": "~2.0.0-beta11",
-    "serve-favicon": "~2.4.2",
-    "slug": "^0.9.1"
-  },
-  "devDependencies": {
-    "gulp": "^3.9.1",
-    "gulp-autoprefixer": "^4.0.0",
-    "gulp-bower": "0.0.13",
-    "gulp-notify": "^3.0.0",
-    "gulp-sass": "^3.1.0",
-    "gulp-sourcemaps": "^2.6.0",
-    "gulp-uglifyjs": "^0.6.2",
-    "gulp-util": "^3.0.8",
-    "sassdoc": "^2.3.0"
   }
 }
