@@ -10,6 +10,10 @@ module.exports = {
             if (content === null) {
                 res.redirect('/');
             } else {
+                res.setHeader('Cache-Control', 'no-store, no-cache, must-revalidate, max-age=0');
+                res.setHeader('Cache-Control', 'post-check=0, pre-check=0');
+                res.setHeader('Pragma', 'no-cache');
+                
                 res.render('vemardu', content);
             }
         }).catch((err) => {

@@ -12,7 +12,6 @@ module.exports = {
                         reject(null);
                     } else {
                         var content = doc.content[Math.floor(Math.random() * doc.content.length)];
-                        console.log(content);
                         fulfill(content);
                     }
                 })
