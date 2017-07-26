@@ -6,6 +6,8 @@ module.exports = {
         res.render('index');
     },
     getRandomImage: (req, res, next) => {
+        var fullUrl = req.protocol + '://' + req.get('host') + req.originalUrl;
+
         app.getRandomImage(req.params.group).then((content) => {
             if (content === null) {
                 res.redirect('/');
@@ -14,7 +16,7 @@ module.exports = {
                 res.setHeader('Cache-Control', 'post-check=0, pre-check=0');
                 res.setHeader('Pragma', 'no-cache');
                 
-                res.render('vemardu', content);
+                res.render('vemardu', {meta: content, url:fullUrl });
             }
         }).catch((err) => {
             res.redirect('/');

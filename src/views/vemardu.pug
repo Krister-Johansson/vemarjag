@@ -1,26 +1,26 @@
 extends layout
 block head
-  title Du är #{name}
+  title Du är #{meta.name}
 
 block append meta
   title Du är #{name}
   meta(name='description', content='Like it? share with friends')
   meta(property='og:site_name', content='Vem Är Du?')
   meta(property='og:type', content='article')
-  meta(property='og:url', content='https://vemarjag.herokuapp.com/demo?who=' + name)
-  meta(property='og:title', content='Du är ' + name)
+  meta(property='og:url', content=url + '?who=' + meta.name)
+  meta(property='og:title', content='Du är ' + meta.name)
   meta(property='og:description', content='Like it? share with friends')
   meta(property='og:image:type', content='image/jpeg')
   meta(property='og:image:width', content='400')
   meta(property='og:image:height', content='400')
   meta(property='og:image', content=image)
-  meta(itemprop='name', content='Du är ' + name)
+  meta(itemprop='name', content='Du är ' + meta.name)
   meta(itemprop='description', content='Like it? share with friends')
   meta(itemprop='image', content=image)
   meta(name='twitter:card', content='photo')
-  meta(name='twitter:title', content='Du är ' + name)
-  meta(name='twitter:image', content=image)
+  meta(name='twitter:title', content='Du är ' + meta.name)
+  meta(name='twitter:image', content=meta.image)
 block container
   .starter-template
-    h1 Du är #{name}
-    img.img-responsive(src=image, alt=name)
+    h1 Du är #{meta.name}
+    img.img-responsive(src=meta.image, alt=meta.name)
