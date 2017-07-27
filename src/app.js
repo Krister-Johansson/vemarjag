@@ -13,6 +13,9 @@ var mongoose = require('mongoose');
 var home = require('./routes/home.route');
 var api = require('./routes/api.route');
 
+var cron = require('./util/facebook');
+cron.scrape().then();
+
 var app = express();
 
 // var mongoDB = mongoose.connect(process.env.MONGODB, {

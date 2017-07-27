@@ -16,7 +16,16 @@ module.exports = {
                 });
         });
     },
-
+    list: (group) => {
+        return new Promise((fulfill, reject) => {
+            Facebook.find().then((doc) => {
+                    fulfill(doc);
+                })
+                .catch((err) => {
+                    reject(err);
+                });
+        });
+    },
     get: (group) => {
         return new Promise((fulfill, reject) => {
             Facebook.findOne({
