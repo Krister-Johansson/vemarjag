@@ -1,7 +1,6 @@
 'use strict';
 const Facebook = require('../models/facebook.model');
 const slug = require('slug');
-const scraper = require('./scraper.busuness');
 
 module.exports = {
     getRandomImage: (group) => {
@@ -21,7 +20,6 @@ module.exports = {
                             group: doc.group,
                             interval: process.env.INTERVAL || 5000
                         });
-                    scraper(doc).then((x) => console.log(x)).catch((x) => console.log(x));
                 }
             }).catch((err) => {
                 reject(err);

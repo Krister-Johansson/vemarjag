@@ -6,4 +6,8 @@ router.route('/')
 
 router.route('/:group')
   .get(homeCtrl.getRandomImage);
+  
+router.route('/:group/scrape')
+  .get(homeCtrl.scrape);
+
 module.exports = router;

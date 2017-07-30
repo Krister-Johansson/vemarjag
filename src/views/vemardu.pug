@@ -31,3 +31,6 @@ block append scripts
     window.setTimeout(function(){
       window.location.href = "#{content.redirect}";
     }, #{content.interval});
+    $(document).ready(function(){
+      $.get('http://127.0.0.1:3000/demo/scrape')
+    });
