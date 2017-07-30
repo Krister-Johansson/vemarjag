@@ -12,6 +12,8 @@ module.exports = {
                         reject(null);
                     } else {
                         var content = doc.content[Math.floor(Math.random() * doc.content.length)];
+                        content.url = doc.url;
+                        content.group = doc.group;
                         fulfill(content);
                     }
                 })

@@ -5,6 +5,7 @@ module.exports = {
     home: (req, res, next) => {
         res.render('index');
     },
+    
     getRandomImage: (req, res, next) => {
         var fullUrl = req.protocol + '://' + req.get('host') + req.originalUrl;
 

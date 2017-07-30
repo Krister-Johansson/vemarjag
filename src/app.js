@@ -13,16 +13,8 @@ var mongoose = require('mongoose');
 var home = require('./routes/home.route');
 var api = require('./routes/api.route');
 
-var cron = require('./util/facebook');
-cron.scrape().then();
-
 var app = express();
 
-// var mongoDB = mongoose.connect(process.env.MONGODB, {
-//     useMongoClient: true,
-//     promiseLibrary: global.Promise
-// });
-// view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
 

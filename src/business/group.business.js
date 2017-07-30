@@ -3,10 +3,11 @@ var Facebook = require('../models/facebook.model');
 var slug = require('slug');
 
 module.exports = {
-    add: (group) => {
+    add: (group, url) => {
         return new Promise((fulfill, reject) => {
             new Facebook({
                     group: group,
+                    url: url,
                     slug: slug(group).toLocaleLowerCase()
                 }).save().then((doc) => {
                     fulfill(doc);

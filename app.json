@@ -3,13 +3,26 @@
     "description": "A test for deploy vemarjag",
     "repository": "https://github.com/Krister-Johansson/vemarjag",
     "logo": "https://cdn2.iconfinder.com/data/icons/nodejs-1/512/nodejs-512.png",
-    "keywords": ["node", "express", "static"],
-    "addons": [{
-        "plan": "mongolab:sandbox",
-        "as": "MONGODB_URI"
-    }],
-    "buildpacks": [{
-        "url": "https://github.com/robgraeber/heroku-buildpack-nodejs-bower-gulp"
-    }]
-
+    "keywords": [
+        "node",
+        "express",
+        "static"
+    ],
+    "addons": [
+        {
+            "plan": "mongolab:sandbox",
+            "as": "MONGODB"
+        }
+    ],
+    "buildpacks": [
+        {
+            "url": "https://github.com/robgraeber/heroku-buildpack-nodejs-bower-gulp"
+        }
+    ],
+    "env": {
+        "DOMAIN_NAME": {
+            "description": "Your domain name",
+            "value": "http://www.example.com"
+        }
+    }
 }

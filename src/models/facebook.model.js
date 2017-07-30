@@ -12,6 +12,11 @@ var FacebookSchema = Schema({
         required: true,
         trim: true,
     },
+    url: {
+        type: String,
+        required: true,
+        trim: true
+    },
     slug: {
         type: String,
         required: true,
