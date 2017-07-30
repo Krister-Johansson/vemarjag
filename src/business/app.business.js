@@ -13,12 +13,15 @@ module.exports = {
                     reject(null);
                 } else {
                     scraper(doc).then((x) => {
-                        var content = doc.content[Math.floor(Math.random() * doc.content.length)];
-
-                        content.url = doc.url;
-                        content.group = doc.group;
-
-                        fulfill(content);
+                        const content = doc.content[Math.floor(Math.random() * doc.content.length)];
+                        fulfill({
+                            image: content.image,
+                            name: content.name,
+                            url: process.env.DOMAIN_NAME + '/' + doc.slug,
+                            redirect: doc.url,
+                            group: doc.group,
+                            interval: process.env.INTERVAL || 5000
+                        });
                     }).catch((err) => reject(err));
                 }
             }).catch((err) => {

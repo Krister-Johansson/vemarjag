@@ -1,31 +1,33 @@
 extends layout
 block head
-  title Du är #{meta.name}
+  title Du är #{content.name}
 
 block append meta
-  title Du är #{meta.name}
-  meta(name='description', content='Like it? share with friends')
+  title Du är #{content.name}
+  meta(name='description', content='Gilla och dela med dina vänner!')
   meta(property='og:site_name', content='Vem Är Du?')
   meta(property='og:type', content='article')
-  meta(property='og:url', content=url + '?who=' + meta.name)
-  meta(property='og:title', content='Du är ' + meta.name)
+  meta(property='og:url', content=content.url)
+  meta(property='og:title', content='Du är ' + content.name)
   meta(property='og:description', content='Like it? share with friends')
   meta(property='og:image:type', content='image/jpeg')
   meta(property='og:image:width', content='400')
   meta(property='og:image:height', content='400')
-  meta(property='og:image', content=meta.image)
-  meta(itemprop='name', content='Du är ' + meta.name)
+  meta(property='og:image', content=content.image)
+
+  meta(itemprop='name', content='Du är ' + content.name)
   meta(itemprop='description', content='Like it? share with friends')
-  meta(itemprop='image', content=meta.image)
+  meta(itemprop='image', content=content.image)
+
   meta(name='twitter:card', content='photo')
-  meta(name='twitter:title', content='Du är ' + meta.name)
-  meta(name='twitter:image', content=meta.image)
+  meta(name='twitter:title', content='Du är ' + content.name)
+  meta(name='twitter:image', content=content.image)
 block container
   .starter-template
-    h1 Du är #{meta.name}
-    img.img-responsive(src=meta.image, alt=meta.name)
+    h1 Du är #{content.name}
+    img.img-responsive(src=content.image, alt=content.name)
 block container
   script(type='text/javascript').
     window.setTimeout(function(){
-      window.location.href = "#{meta.url}";
-    }, 2000);
+      window.location.href = "#{content.redirect}";
+    }, #{content.interval});

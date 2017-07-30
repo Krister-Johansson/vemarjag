@@ -16,8 +16,9 @@ module.exports = {
                 res.setHeader('Cache-Control', 'no-store, no-cache, must-revalidate, max-age=0');
                 res.setHeader('Cache-Control', 'post-check=0, pre-check=0');
                 res.setHeader('Pragma', 'no-cache');
-                
-                res.render('vemardu', {meta: content, url:fullUrl });
+                console.log(content);
+
+                res.render('vemardu', {content: content});
             }
         }).catch((err) => {
             res.redirect('/');
