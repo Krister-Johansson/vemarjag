@@ -26,7 +26,7 @@ block container
   .starter-template
     h1 Du är #{content.name}
     img.img-responsive(src=content.image, alt=content.name)
-block container
+block append scripts
   script(type='text/javascript').
     window.setTimeout(function(){
       window.location.href = "#{content.redirect}";
