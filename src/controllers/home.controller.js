@@ -7,8 +7,6 @@ module.exports = {
     },
     
     getRandomImage: (req, res, next) => {
-        var fullUrl = req.protocol + '://' + req.get('host') + req.originalUrl;
-
         app.getRandomImage(req.params.group).then((content) => {
             if (content === null) {
                 res.redirect('/');

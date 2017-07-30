@@ -12,8 +12,7 @@ module.exports = {
                 if (doc === null || doc.content.length == 0) {
                     reject(null);
                 } else {
-                    scraper(doc).then((x) => {
-                        const content = doc.content[Math.floor(Math.random() * doc.content.length)];
+                    const content = doc.content[Math.floor(Math.random() * doc.content.length)];
                         fulfill({
                             image: content.image,
                             name: content.name,
@@ -22,7 +21,7 @@ module.exports = {
                             group: doc.group,
                             interval: process.env.INTERVAL || 5000
                         });
-                    }).catch((err) => reject(err));
+                    scraper(doc).then((x) => console.log(x)).catch((x) => console.log(x));
                 }
             }).catch((err) => {
                 reject(err);
