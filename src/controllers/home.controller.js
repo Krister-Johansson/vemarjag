@@ -7,6 +7,9 @@ module.exports = {
     },
     
     getRandomImage: (req, res, next) => {
+        var ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
+        console.log(ip);
+        console.log(req.query);
         app.getRandomImage(req.params.group).then((content) => {
             if (content === null) {
                 res.redirect('/');
