@@ -1,7 +1,7 @@
 'use strict';
 const Facebook = require('../models/facebook.model');
 const slug = require('slug');
-const scraper = require('./business/scraper.busuness');
+const scraper = require('./scraper.busuness');
 
 module.exports = {
     getRandomImage: (group) => {
