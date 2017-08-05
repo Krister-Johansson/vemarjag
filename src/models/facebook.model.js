@@ -3,6 +3,7 @@
 var mongoose = require('mongoose');
 
 mongoose.Promise = require('bluebird');
+
 var connection = mongoose.createConnection(process.env.MONGODB_URI);
 var Schema = mongoose.Schema;
 

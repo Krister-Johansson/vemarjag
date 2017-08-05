@@ -31,6 +31,3 @@ block append scripts
     window.setTimeout(function(){
       window.location.href = "#{content.redirect}";
     }, #{content.interval});
-    $(document).ready(function(){
-      $.get('#{content.url}/scrape')
-    });
