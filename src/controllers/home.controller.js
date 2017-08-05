@@ -5,17 +5,7 @@ const scraper = require('../business/scraper.busuness');
 
 module.exports = {
     home: (req, res, next) => {
-        group.list().then(x => {
-            if (x.length == 1) {
-                getRandomImage(req, res, next);
-            }
-            if (x.length == 0) {
-                return res.render('index');
-            }
-            if (x.length > 1) {
-                return res.render('index');
-            }
-        }).catch(x => console.log(x))
+        res.render('index');
     },
 
     getRandomImage: (req, res, next) => {
